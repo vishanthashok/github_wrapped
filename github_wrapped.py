@@ -191,11 +191,12 @@ def display_wrapped(user, year, commit_count, pr_count, repos, languages):
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 def main():
-    console.print("\n[bold magenta]🐙 GitHub Wrapped[/bold magenta] — Let's see what you built!\n")
+    # Use plain input() for better compatibility across terminals
+    print("\n🐙 GitHub Wrapped — Let's see what you built!\n")
 
-    username = console.input("[cyan]GitHub username: [/cyan]").strip()
-    token    = console.input("[cyan]Personal access token: [/cyan]").strip()
-    year     = console.input("[cyan]Year (e.g. 2024): [/cyan]").strip()
+    username = input("GitHub username: ").strip()
+    token    = input("Personal access token: ").strip()
+    year     = input("Year (e.g. 2024): ").strip()
 
     if not year.isdigit() or len(year) != 4:
         console.print("[red]❌  Invalid year. Please enter a 4-digit year like 2024.[/red]")
